@@ -173,7 +173,7 @@ def create_model(training):
 
 def test_model():
     model = create_model(True)
-    model.load_weights("checkpoints/weights.01-0.32")
+    model.load_weights("my_code/checkpoints/weights.01-0.32")
     input = open("./data/debug_src.txt", "r", encoding="utf8").readlines()
     input = np.array([input[0].strip().split()])
     target = np.array([[1]])
@@ -206,12 +206,11 @@ if __name__ == "__main__":
     dev_iter, dev_steps = generator_for_dev()
     test_iter, test_steps = generator_for_test()
 
-    # training = False
     training = True
     if training:
         model = create_model(training)
         model.summary()
-        #tf.keras.utils.plot_model(model, to_file="model.png", show_shapes=True, expand_nested=True)
+        # tf.keras.utils.plot_model(model, to_file="model.png", show_shapes=True, expand_nested=True)
         optimizer = tf.keras.optimizers.Adam(learning_rate=0.005)
         model.compile(optimizer=optimizer, loss=[tf.keras.losses.sparse_categorical_crossentropy], loss_weights=[1.0])
         callback = tf.keras.callbacks.ModelCheckpoint(
@@ -233,7 +232,7 @@ if __name__ == "__main__":
         np.random.seed(1234)
         token2id, id2token = get_voc()
         model = create_model(training)
-        model.load_weights("checkpoints/weights.01-0.32")
+        model.load_weights("my_code/checkpoints/weights.01-0.32")
         print("load_weights ok")
         result = model.predict(x=test_iter)
         #print("result:", result, "length:", len(result))
