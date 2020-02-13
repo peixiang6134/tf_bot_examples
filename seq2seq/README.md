@@ -1,10 +1,8 @@
-[toc]
-
 
 
 ### Seq2Seq简介
 
-Seq2Seq可以完成两个不定长序列的映射，Seq2Seq由`Encoder`与`Decoder`两部分组成，`Encoder`负责把序列编码成一个固定长度的向量，这个向量作为输入传给`Deocder`，`Decoder`将根据自身的状态以及`Encoder`的输出生成目标序列。下如就是一个简单的Seq2Seq模型示意图：
+Seq2Seq可以完成两个不定长序列的映射，它由`Encoder`与`Decoder`两部分组成，`Encoder`负责把序列编码成一个固定长度的向量，这个向量作为输入传给`Deocder`，`Decoder`将根据自身的状态以及`Encoder`的输出生成目标序列。下图就是一个简单的Seq2Seq模型示意图：
 
 ![1581593306961](imgs/1581593306961.png)
 
