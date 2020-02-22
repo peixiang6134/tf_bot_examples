@@ -102,7 +102,7 @@ Encoder的RNN只需要输出状态即可：
 
 点击`设置encoder输出`，将`encoder`的状态设置为输出，因为我们需要将它传给`decoder`：
 
-![1581591295860](imgs/1581591295860.png)
+![1581591295860](imgs/set_encoder_out.png)
 
 接下来就可以配置`decoder`了。
 
